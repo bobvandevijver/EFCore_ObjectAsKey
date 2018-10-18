@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Enitities;
+using WebApplication1.Entities;
 
 namespace WebApplication1.Controllers
 {
@@ -26,6 +26,12 @@ namespace WebApplication1.Controllers
         public ActionResult<Book> Get(int id)
         {
             return _context.Books.Find(new BookId(id));
+        }
+
+        [HttpGet("where/{id}")]
+        public ActionResult<Book> Where(int id)
+        {
+            return _context.Books.FirstOrDefault(_ => _.id == new BookId(id));
         }
 
         [HttpGet("create/{id}")]

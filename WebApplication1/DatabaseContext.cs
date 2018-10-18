@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Enitities;
+using WebApplication1.Entities;
 
 namespace WebApplication1
 {
